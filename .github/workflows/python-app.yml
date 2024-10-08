@@ -25,3 +25,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: EC2 salaH
+      run: |
+            echo "${{secrets.AWS_EC2_PEM}}" >private_key && chmod 600 private_key
+            ssh -o StrictHostKeyChecking=no -i private_key ubuntu@ec2-52-22-155-175.compute-1.amazonaws.com "
+            cd Rpas_Interdisciplinar/;git pull;./executar.sh;"
