@@ -26,7 +26,7 @@ driver.find_element(By.XPATH, "/html/body/div/div[2]/div[2]/button").click()
 
 time.sleep(7)
 
-campo_senha = driver.find_element(By.XPATH, "//*[@id='i0118']")
+campo_senha = driver.find_element(By.XPATH, "//input[@placeholder='Senha']")
 
 driver.execute_script(f"arguments[0].value = '{os.getenv('SENHA')}';", campo_senha)
 
