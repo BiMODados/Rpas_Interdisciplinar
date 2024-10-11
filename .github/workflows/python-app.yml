@@ -25,6 +25,9 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: EC2 salaH
       run: |
-            echo "${{secrets.AWS_EC2_PEM}}" >private_key && chmod 600 private_key
-            ssh -o StrictHostKeyChecking=no -i private_key ubuntu@ec2-52-22-155-175.compute-1.amazonaws.com "
-            cd Rpas_Interdisciplinar/;git pull;./executar.sh;"
+        echo "${{secrets.AWS_EC2_PEM}}" > private_key && chmod 600 private_key
+        eval "$(ssh-agent -s)" # Inicia o ssh-agent
+        echo "${{secrets.AWS_EC2_PEM}}" | ssh-add private_key # Adiciona a chave ao ssh-agent
+        ssh-add -t 600 private_key # Configura o tempo de expiração da chave (opcional)
+        ssh -o StrictHostKeyChecking=no ubuntu@ec2-52-22-155-175.compute-1.amazonaws.com "
+        cd Rpas_Interdisciplinar/; git pull; ./executar.sh;"
