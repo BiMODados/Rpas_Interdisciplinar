@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<h1>BiMO - API</h1>
+<h1>BiMO - RPA</h1>
 <p>
         Bem-vindo ao repositório dos RPA's e Script do projeto BiMO, voltado para MEIs (Microempreendedores Individuais). 
         Este projeto tem como objetivo facilitar a venda de produtos usados entre empresas e oferecer cursos relacionados ao empreendedorismo.
