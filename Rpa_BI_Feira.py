@@ -13,6 +13,7 @@ load_dotenv()
 
 # Configurações do ChromeDriver (headless)
 chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument("--headless")
 
 # Inicializar o driver
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
