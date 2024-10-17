@@ -19,7 +19,7 @@ chrome_options.add_argument("--headless")
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
 
 # Acessar o URL do Power BI
-driver.get("https://app.powerbi.com/groups/me/datasets/01779d62-f86c-4644-96d9-2622477a4b39/details?experience=power-bi")
+driver.get(f"{os.getenv('URL_LOCAL')}")
 
 # Esperar até que o campo de e-mail esteja presente
 campo_email = WebDriverWait(driver, 20).until(
