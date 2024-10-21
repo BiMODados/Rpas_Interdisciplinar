@@ -96,6 +96,29 @@ try:
             print("Dados Inseridos com sucesso!")
         else:
             print(f"Não encontramos dados para a tabela {tabela_origem}!")
+            
+        #Transferindo dados de midia do curso
+        tabela_origem="midiaCurso"
+        tabela_destino="Curso"
+        colunas = ["cUrlFoto", "idCurso"]
+        
+        query_origem = f"SELECT {', '.join(colunas)} FROM {tabela_origem} WHERE transaction_made = false;"
+        cursor_origem.execute(query_origem)
+        dados = cursor_origem.fetchall()
+        query_destino = f"UPDATE {tabela_destino} SET {colunas[0]} = %s WHERE sid = %s"
+        
+        if dados:
+            print(f"Dados a inserir de {tabela_origem}:\n{dados}")
+                
+            for linha in dados:
+                cursor_destino.execute(query_destino, (linha))
+
+            cursor_origem.execute(f"UPDATE {tabela_origem} SET transaction_made = true WHERE transaction_made = false;")
+            conexao_origem.commit()
+            conexao_destino.commit()
+            print("Dados Inseridos com sucesso!")
+        else:
+            print(f"Não encontramos dados para a tabela {tabela_origem}!")
         
     def update_data(tabela_origem, tabela_destino, tipo_categoria, colunas):
         # Construindo a query de origem
@@ -115,11 +138,15 @@ try:
                     cid_valor = f"{tipo_categoria[0:4].upper()}_{linha[0]}"
                     cursor_destino.execute(query_destino, (linha[1], linha[2], cid_valor))
                 else:
-                    if tabela_destino == "Curso":
+                    if tabela_destino == "Curso" and tabela_origem == "Curso":
                         colunas.remove("idcategoriacurso")
                         colunas.append("idcategoria")
                         query_destino = f"UPDATE {tabela_destino} SET {', '.join([f'{coluna} = %s' for coluna in colunas])} WHERE sId = %s"
                         cursor_destino.execute(query_destino, (linha[0], linha[1], linha[2], linha[3], linha[4], linha[5], linha[6], linha[7], linha[8], f'CURS_{linha[9]}', linha[0]))
+                    elif tabela_destino == "Curso" and tabela_origem == "MidiaCurso":
+                        colunas.remove("idCurso")
+                        query_destino = f"UPDATE {tabela_destino} SET {', '.join([f'{coluna} = %s' for coluna in colunas])} WHERE sId = %s"
+                        cursor_destino.execute(query_destino, (linha[1], linha[0]))
                     else:
                         query_destino = f"UPDATE {tabela_destino} SET {', '.join([f'{coluna} = %s' for coluna in colunas])} WHERE sId = %s"
                         cursor_destino.execute(query_destino, (*linha, linha[0]))
@@ -145,10 +172,17 @@ try:
     # Atualizando dados para Plano
     update_data(tabela_origem="Plano", tabela_destino="Plano", tipo_categoria=None, colunas=["sid", "cnome", "cdescricao", "fvalor", 'bisinactive'])
     
+    # Atualizando dados para Curso
     update_data(tabela_origem="Curso",
         tabela_destino="Curso",
         tipo_categoria=None,
         colunas=["sid","bstatus", "cdescricao", "cduracao", "ccertificacao", "cnome", "fvalor", "inumeroinscricao", 'bisinactive', "idcategoriacurso"])
+    
+    # Atualizando dados para Midia curso
+    update_data(tabela_origem="MidiaCurso",
+        tabela_destino="Curso",
+        tipo_categoria=None,
+        colunas=["idCurso", "cUrlFoto"])
 
     # Commitar e fechar conexões
     conexao_destino.commit()
