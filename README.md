@@ -12,14 +12,33 @@
 </p>
 <h2>Funcionalidades</h2>
 <ul>
-<li>🎲 <strong>Atualização de dados administrativos:</strong> Atualizaremos as informações no banco de dados do app com as informações que nosso Adm's colocarem/atualizarem no banco de dados deles.</li>
+<li>🎲 <strong>Atualização de dados administrativos:</strong> Atualizaremos as informações no banco de dados do app com as informações que nosso Adm's adicionarem/atualizarem/excluirem no banco de dados deles. <br>Para as seguintes tabelas:</li>
+<ul>
+<li> <strong>CategoriaProduto e CategoriaCurso -> Categoria</strong></li>
+<li> <strong>Plano -> Plano</strong></li>
+<li> <strong>Curso -> Curso</strong></li>
+<li> <strong>MidiaCurso -> Curso</strong></li>
+</ul>
 <li>📈 <strong>Atualização de visualização Dash local:</strong> Atualizaremos as visualizações e dados de um Dashboard que contém avaliações e informações valiosas para nosso projeto.</li>
 <li>📊 <strong>Atualização de visualização Dash feira:</strong> Atualizaremos as visualizações e dados de um Dashboard que contém avaliações do dia da feira do interdisciplinar.</li>
 </ul>
 <h2>Tecnologias Utilizadas</h2>
 <ul>
 <li>🐍 <strong>Python:</strong> Linguagem base utilizada para os Rpa's</li>
-<li>💾 <strong>Banco de Dados:</strong> Postgres.</li>
+<li>💾 <strong>Postgres:</strong> Banco de dados.</li>
+<li>☁️ <strong>AWS Ec2: </strong> Cloud para os Rpa's.</li>
+</ul>
+<h2>Modelagem do banco do primeiro:</h2>
+<img src="./Modelagens/modelagem1º.jpg" alt="Modelagem BiMO primeiro">
+<h2>Modelagem do nosso banco:</h2>
+<img src="./Modelagens/modelagem2°.png" alt="Modelagem BiMO segundo">
+<h2>Bibliotecas python utilizadas:</h2>
+<ul>
+<li>🔗 <strong>selenium</strong></li>
+<li>🌐 <strong>webdriver_manager</strong></li>
+<li>🔑 <strong>python-dotenv</strong></li>
+<li>💾 <strong>psycopg2-binary</strong></li>
+<li>🛜 <strong>requests</strong></li>
 </ul>
 <h2>Criador</h2>
 <ul>
