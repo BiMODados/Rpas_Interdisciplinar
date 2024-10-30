@@ -1,8 +1,6 @@
-name: Pipeline RPA interdisciplinar
-
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "PROD" ]
     
 permissions:
   contents: read
