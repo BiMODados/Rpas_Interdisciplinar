@@ -44,7 +44,7 @@ try:
         dados = cursor_origem.fetchall()
         
         if dados:
-            print(f"Dados a inserir de {tabela_origem}:\n{dados}")
+            print(f"Inserindo dados de {tabela_origem} em {tabela_destino}:")
             for linha in dados:
                 if tipo_categoria == "Curso":
                     cursor_destino.execute(query_destino, (f'CURS_{linha[0]}', linha[1], linha[2], linha[3]))
@@ -85,7 +85,7 @@ try:
         query_destino = f"INSERT INTO {tabela_destino} ({', '.join(colunas[0:9])}, idCategoria) VALUES ({placeholders})"
             
         if dados:
-            print(f"Dados a inserir de {tabela_origem}:\n{dados}")
+            print(f"Inserindo dados de {tabela_origem} em {tabela_destino}:")
                 
             for linha in dados:
                 cursor_destino.execute(query_destino, (linha[0], linha[1], linha[2], linha[3], linha[4], linha[5], linha[6], linha[7], linha[8], f'CURS_{linha[9]}'))
@@ -128,7 +128,7 @@ try:
         dados = cursor_origem.fetchall()
         
         if dados:
-            print(f"Dados a atualizar de {tabela_origem}:\n{dados}")
+            print(f"Atualizando dados de {tabela_origem} em em {tabela_destino}:\n")
             # Para cada linha de dados encontrada
             for linha in dados:
                 # Construindo a query de destino dependendo da existência de 'tipo_categoria'
