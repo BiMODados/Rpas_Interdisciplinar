@@ -1,0 +1,17 @@
+Índice:
+
+1. Tabela Pedido
+Problema Identificado:
+
+Adicionamos um index na chave estrangeira do idUsuario de Pedido, pois identificamos que essa tabela teria muitas chamadas nesse atributo e que poderia ser mais performartico para nosso app.
+Ações Realizadas:
+
+Adição de um índice para a chave estrangeira:
+
+CREATE INDEX idx_pedido_usuario ON Pedido(idUsuario);
+
+Normalização:
+
+A normalização que realizamos é uma estratégia para otimizar tanto o tamanho quanto a eficiência das consultas no banco de dados. 
+Para isso, analisamos cuidadosamente a necessidade de cada tabela e campo em nosso aplicativo, mantendo apenas o essencial. 
+Para obter detalhes específicos sobre o processo de normalização, consulte o arquivo 'Normalização_Banco_Dados_SQL.txt'.

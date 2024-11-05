@@ -32,6 +32,8 @@
 <img src="./Modelagens/modelagem1º.jpg" alt="Modelagem BiMO primeiro">
 <h2>Modelagem do nosso banco:</h2>
 <img src="./Modelagens/modelagem2°.png" alt="Modelagem BiMO segundo">
+<h2>Modelagem do nosso banco no mongo:</h2>
+<img src="./Modelagens/modelagemMongo.png" alt="Modelagem BiMO segundo">
 <h2>Bibliotecas python utilizadas:</h2>
 <ul>
 <li>🔗 <strong>selenium</strong></li>
@@ -40,9 +42,10 @@
 <li>💾 <strong>psycopg2-binary</strong></li>
 <li>🛜 <strong>requests</strong></li>
 </ul>
-<h2>Criador</h2>
+<h2>Criadores</h2>
 <ul>
 <li><strong>Marcus Vinicius Righeto Thomazetti</strong> - <a href="https://github.com/MarcusVinciusRT">GitHub</a></li>
+<li><strong>Davi De Siqueira Cavalcante</strong> - <a href="https://github.com/davaslindo">GitHub</a></li>
 </ul>
 </body>
 </html>
