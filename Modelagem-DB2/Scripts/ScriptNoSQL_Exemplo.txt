@@ -1,0 +1,35 @@
+db.postagem.insertMany([
+  {
+    cld: "2",
+    idUsuario: 3,
+    texto: "Outra postagem de exemplo.",
+    img_firebase: "url_da_imagem_no_firebase_2",
+    curtidas: 5,
+    class: "exemplo2",
+    created_at: new Date()
+  },
+  {
+    cld: "3",
+    idUsuario: 4,
+    texto: "Mais uma postagem de exemplo.",
+    img_firebase: "url_da_imagem_no_firebase_3",
+    curtidas: 8,
+    class: "exemplo3",
+    created_at: new Date()
+  }
+])
+
+db.comentario.insertMany([
+  {
+    idPostagem: "2",
+    idUsuario: 5,
+    texto: "Comentário sobre a segunda postagem.",
+    created_at: new Date()
+  },
+  {
+    idPostagem: "3",
+    idUsuario: 6,
+    texto: "Comentário sobre a terceira postagem.",
+    created_at: new Date()
+  }
+])
