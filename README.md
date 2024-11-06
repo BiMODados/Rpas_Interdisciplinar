@@ -29,11 +29,11 @@
 <li>☁️ <strong>AWS Ec2: </strong> Cloud para os Rpa's.</li>
 </ul>
 <h2>Modelagem do banco do primeiro:</h2>
-<img src="./Modelagens/modelagem1º.jpg" alt="Modelagem BiMO primeiro">
+<img src="./Modelagem-DB2/modelagem1º.jpg" alt="Modelagem BiMO primeiro">
 <h2>Modelagem do nosso banco:</h2>
-<img src="./Modelagens/modelagem2°.png" alt="Modelagem BiMO segundo">
+<img src="./Modelagem-DB2/modelagem2°.png" alt="Modelagem BiMO segundo">
 <h2>Modelagem do nosso banco no mongo:</h2>
-<img src="./Modelagens/modelagemMongo.png" alt="Modelagem BiMO segundo">
+<img src="./Modelagem-DB2/modelagemMongo.png" alt="Modelagem BiMO segundo">
 <h2>Bibliotecas python utilizadas:</h2>
 <ul>
 <li>🔗 <strong>selenium</strong></li>
